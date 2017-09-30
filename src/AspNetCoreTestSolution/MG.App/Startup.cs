@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MG.Data.Repositories;
+using MG.Entity;
 using MG.Entity.DbContext;
+using MG.Infrastructure.Repositories;
+using MG.Service.Impl;
+using MG.Service.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace MG.App
 {
@@ -26,6 +32,12 @@ namespace MG.App
             //数据库链接
             var connection = Configuration.GetConnectionString("SqlServerConnection");
             services.AddDbContextPool<ProjectContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("MG.App")));
+
+            //工作单元
+            services.AddUnitOfWork<ProjectContext>();
+
+            //DI
+            AddDependencies(services);
 
             services.AddMvc();
         }
@@ -51,6 +63,20 @@ namespace MG.App
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+        }
+
+        private IServiceCollection AddDependencies(IServiceCollection services)
+        {
+            //services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+            services.AddSingleton<IBaseRepository<Account>, BaseRepository<Account>>();
+            services.AddSingleton<IBaseRepository<SysRole>, BaseRepository<SysRole>>();
+            services.AddSingleton<IBaseRepository<SysOrganize>, BaseRepository<SysOrganize>>();
+
+            //Services
+            services.AddScoped<IAccountService, AccountService>();
+
+            return services;
         }
     }
 }

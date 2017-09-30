@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace MG.Entity
+namespace MG.Infrastructure.Core
 {
     public class BaseEntity
     {
