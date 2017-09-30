@@ -1,1 +1,5 @@
-﻿
+﻿添加迁移
+Add-Migration 20170930 -Context ProjectContext
+
+更新数据库
+Update-Database -Context ProjectContext
