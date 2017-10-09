@@ -11,8 +11,8 @@ using System;
 namespace MG.App.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20170930095940_20170930")]
-    partial class _20170930
+    [Migration("20171009020204_20171009")]
+    partial class _20171009
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,11 @@ namespace MG.App.Migrations
                     b.Property<bool>("EmailChecked")
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(false);
+
+                    b.Property<string>("GuidId")
+                        .IsRequired()
+                        .HasColumnName("Guid")
+                        .HasMaxLength(36);
 
                     b.Property<string>("HeadImgUrl")
                         .HasMaxLength(200);

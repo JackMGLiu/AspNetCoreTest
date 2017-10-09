@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace MG.App.Migrations
 {
-    public partial class _20170930 : Migration
+    public partial class _20171009 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -79,6 +79,7 @@ namespace MG.App.Migrations
                     District = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     EmailChecked = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
+                    Guid = table.Column<string>(type: "nvarchar(36)", maxLength: 36, nullable: false),
                     HeadImgUrl = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false, defaultValue: false),
                     IsEnableed = table.Column<bool>(type: "bit", nullable: false),

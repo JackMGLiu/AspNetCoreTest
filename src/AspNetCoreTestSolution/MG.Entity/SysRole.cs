@@ -42,6 +42,9 @@ namespace MG.Entity
         [MaxLength(50)]
         public string Remark { get; set; }
 
+        [MaxLength(50)]
+        public string ShortName { get; set; }
+
         #region 关联
 
         public List<UserRole> UserRoles { get; set; }

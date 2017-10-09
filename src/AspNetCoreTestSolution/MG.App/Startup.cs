@@ -75,6 +75,7 @@ namespace MG.App
 
             //Services
             services.AddScoped<IAccountService, AccountService>();
+            services.AddScoped<ISysRoleService, SysRoleService>();
 
             return services;
         }

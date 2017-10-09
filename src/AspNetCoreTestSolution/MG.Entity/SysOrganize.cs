@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.InteropServices;
 using MG.Infrastructure.Core;
 
 namespace MG.Entity
@@ -64,7 +65,7 @@ namespace MG.Entity
 
         #region 关联
 
-        public List<Account> Accounts { get; set; }
+        public virtual List<Account> Accounts { get; set; }
 
         #endregion
     }

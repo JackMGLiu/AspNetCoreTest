@@ -10,21 +10,23 @@ namespace MG.App.Controllers
     public class TestController : Controller
     {
         private readonly IAccountService _accountService;
+        private readonly ISysRoleService _roleService;
 
-        public TestController(IAccountService accountService)
+        public TestController(IAccountService accountService, ISysRoleService roleService)
         {
             this._accountService = accountService;
+            this._roleService = roleService;
         }
 
         public IActionResult Test1()
         {
-            var count = _accountService.GetCount();
+            var count = _roleService.GetCount();
             return Content(count.ToString());
         }
 
         public IActionResult Test2()
         {
-            var count = _accountService.GetCountBySql("select * from Account");
+            var count = _roleService.GetCountBySql("select * from SysRole");
             return Content(count.ToString());
         }
     }

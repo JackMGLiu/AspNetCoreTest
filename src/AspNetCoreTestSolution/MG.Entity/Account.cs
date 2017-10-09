@@ -8,6 +8,11 @@ namespace MG.Entity
 {
     public partial class Account : BaseEntity
     {
+        [Required]
+        [MaxLength(36)]
+        [Column("Guid")]
+        public string GuidId { get; set; }
+
         /// <summary>
         /// 用户名
         /// </summary>
@@ -187,7 +192,7 @@ namespace MG.Entity
 
         public virtual SysOrganize Organize { get; set; }
 
-        public List<UserRole> UserRoles { get; set; }
+        public virtual List<UserRole> UserRoles { get; set; }
 
         #endregion
     }
