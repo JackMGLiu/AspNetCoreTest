@@ -1,0 +1,13 @@
+{
+  "name": "ueditor",
+  "homepage": "https://github.com/fex-team/ueditor",
+  "_release": "v1.4.3.2",
+  "_resolution": {
+    "type": "tag",
+    "tag": "v1.4.3.2",
+    "commit": "debfc4c1c3ef2457cd7b7dedeb448ca13de8dd55"
+  },
+  "_source": "https://github.com/fex-team/ueditor.git",
+  "_target": "v1.4.3.2",
+  "_originalSource": "ueditor"
+}

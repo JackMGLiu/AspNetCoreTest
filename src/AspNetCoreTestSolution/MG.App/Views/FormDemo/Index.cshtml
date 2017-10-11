@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "表单设计";
+}
+@section Styles{
+    <link href="~/layui/css/layui.css" rel="stylesheet" />
+}
+<p></p>
+<form id="formdemo1">
+    <input type="hidden" name="fields" id="fields" value="0" />
+    <div class="row">
+        <div class="well well-sm">
+            <span class="pull-right">
+                <a href="javascript:void(0);" class="btn btn-success btn-sm">使用实例演示</a>
+            </span>
+            <p>
+                基本控件：<br /><br />
+                <button type="button" onclick="leipiFormDesign.exec('text');" class="btn btn-info">文本框</button>
+                <button type="button" onclick="leipiFormDesign.exec('textarea');" class="btn btn-info">多行文本</button>
+                <button type="button" onclick="leipiFormDesign.exec('select');" class="btn btn-info">下拉菜单</button>
+                <button type="button" onclick="leipiFormDesign.exec('radios');" class="btn btn-info">单选框</button>
+                <button type="button" onclick="leipiFormDesign.exec('checkboxs');" class="btn btn-info">复选框</button>
+                <button type="button" onclick="leipiFormDesign.exec('macros');" class="btn btn-info">宏控件</button>
+                @*<button type="button" onclick="leipiFormDesign.exec('progressbar');" class="btn btn-info">进度条</button>*@
+                <button type="button" onclick="leipiFormDesign.exec('qrcode');" class="btn btn-info">二维码</button>
+                <button type="button" onclick="leipiFormDesign.exec('listctrl');" class="btn btn-info">列表控件</button>
+            </p>
+        </div>
+
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">通用字段</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <ul class="list-group">
+                            <li class="list-group-item">Cras justo odio</li>
+                            <li class="list-group-item">Dapibus ac facilisis in</li>
+                            <li class="list-group-item">Morbi leo risus</li>
+                            <li class="list-group-item">Porta ac consectetur ac</li>
+                            <li class="list-group-item">Vestibulum at eros</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">设计表单</div>
+                <div class="panel-body">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">表单属性</div>
+                <div class="panel-body">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <script src="~/layui/layui.js"></script>
+    <script>
+        
+    </script>
+    @*<script src="~/ueditor/ueditor.config.js"></script>
+        <script src="~/ueditor/ueditor.all.js"></script>
+        <script src="~/ueditor/lang/zh-cn/zh-cn.js"></script>
+        <script>
+            UE.delEditor('myFormDesign');
+            var formEditor = UE.getEditor('myFormDesign', {
+                //allowDivTransToP: false,//阻止转换div 为p
+                toolleipi: true,//是否显示，设计器的 toolbars
+                textarea: 'design_content',
+                //这里可以选择自己需要的工具按钮名称,此处仅选择如下五个
+                toolbars: [[
+                    'fullscreen', 'source', '|', 'undo', 'redo', '|', 'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'removeformat', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', '|', 'fontfamily', 'fontsize', '|', 'indent', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyjustify', '|', 'link', 'unlink', '|', 'horizontal', 'spechars', 'wordimage', '|', 'inserttable', 'deletetable', 'mergecells', 'splittocells']],
+                //focus时自动清空初始化时的内容
+                //autoClearinitialContent:true,
+                //关闭字数统计
+                wordCount: false,
+                //关闭elementPath
+                elementPathEnabled: false,
+                //默认的编辑区域高度
+                initialFrameHeight: 300
+                //,iframeCssUrl:"css/bootstrap/css/bootstrap.css" //引入自身 css使编辑器兼容你网站css
+                //更多其他参数，请参考ueditor.config.js中的配置项
+            });
+        </script>*@
+}

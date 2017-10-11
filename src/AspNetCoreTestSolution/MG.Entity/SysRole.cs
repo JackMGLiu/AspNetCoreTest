@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using MG.Infrastructure.Core;
@@ -31,12 +32,13 @@ namespace MG.Entity
         [MaxLength(50)]
         public string CreateUser { get; set; }
 
-        [Required]
+        [Required, Column(TypeName = "datetime")]
         public DateTime CreateTime { get; set; }
 
         [MaxLength(50)]
         public string ModifyUser { get; set; }
 
+        [Column(TypeName = "datetime")]
         public DateTime? ModifyTime { get; set; }
 
         [MaxLength(50)]

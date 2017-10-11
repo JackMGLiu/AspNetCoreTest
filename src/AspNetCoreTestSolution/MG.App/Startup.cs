@@ -33,8 +33,7 @@ namespace MG.App
             var connection = Configuration.GetConnectionString("SqlServerConnection");
             services.AddDbContextPool<ProjectContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("MG.App")));
 
-            //工作单元
-            services.AddUnitOfWork<ProjectContext>();
+
 
             //DI
             AddDependencies(services);
@@ -67,6 +66,9 @@ namespace MG.App
 
         private IServiceCollection AddDependencies(IServiceCollection services)
         {
+            //工作单元
+            services.AddUnitOfWork<ProjectContext>();
+
             //services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddSingleton<IBaseRepository<Account>, BaseRepository<Account>>();

@@ -32,7 +32,7 @@ namespace MG.Entity
         [MaxLength(50)]
         public string CreateUser { get; set; }
 
-        [Required]
+        [Required, Column(TypeName = "datetime")]
         public DateTime CreateTime { get; set; }
     }
 }

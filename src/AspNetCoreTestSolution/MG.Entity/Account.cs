@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using MG.Infrastructure.Core;
@@ -148,7 +149,7 @@ namespace MG.Entity
         /// <summary>
         /// 当前登陆时间
         /// </summary>
-        [Required]
+        [Required, Column(TypeName = "datetime")]
         public DateTime ThisLoginTime { get; set; }
 
         /// <summary>
@@ -160,7 +161,7 @@ namespace MG.Entity
         /// <summary>
         /// 最后一次登陆时间
         /// </summary>
-        [Required]
+        [Required, Column(TypeName = "datetime")]
         public DateTime LastLoginTime { get; set; }
 
         /// <summary>
@@ -172,6 +173,7 @@ namespace MG.Entity
         /// <summary>
         /// 最后一次授权时间
         /// </summary>
+        [Column(TypeName = "datetime")]
         public DateTime? LastWeixinSignInTime { get; set; }
 
         /// <summary>
@@ -183,7 +185,7 @@ namespace MG.Entity
         /// <summary>
         /// 添加时间
         /// </summary>
-        [Required]
+        [Required, Column(TypeName = "datetime")]
         public DateTime CreateTime { get; set; }
 
         #region 关联

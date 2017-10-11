@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="~/layui/css/layui.css" rel="stylesheet" media="all" />
+    <link href="~/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/jquery-ui/themes/base/jquery-ui.css" rel="stylesheet" />
+    <title>Demo1</title>
+</head>
+<body>
+    <div class="layui-container">
+        <br />
+        <blockquote class="layui-elem-quote">自定义表单布局设计</blockquote>
+        <div class="layui-row">
+            <div id="formfield" class="layui-col-md3">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;margin-right: 10px;">
+                    <legend>表单通用字段</legend>
+                </fieldset>
+                <div class="layui-btn-group">
+                    <button class="draggable layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-font" aria-hidden="true"></i> 单行文本</button>
+                    <button class="draggable layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-sort-numeric-asc" aria-hidden="true"></i> 数字</button>
+                </div>
+                <br />
+                <div class="layui-btn-group">
+                    <button class="layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-outdent" aria-hidden="true"></i> 多行文本</button>
+                    <button class="layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-check-square" aria-hidden="true"></i> 多选框</button>
+                </div>
+                <br />
+                <div class="layui-btn-group">
+                    <button class="layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-calendar" aria-hidden="true"></i> 日期类型</button>
+                    <button class="layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-clock-o" aria-hidden="true"></i> 时间类型</button>
+                </div>
+                <br />
+                <div class="layui-btn-group">
+                    <button class="layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-upload" aria-hidden="true"></i> 文件上传</button>
+                    <button class="layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-file-photo-o" aria-hidden="true"></i> 图片</button>
+                </div>
+                <br />
+                <div class="layui-btn-group">
+                    <button class="layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-minus" aria-hidden="true"></i> 分隔符</button>
+                    <button class="layui-btn layui-btn-primary" style="width: 100px;"><i class="fa fa-code" aria-hidden="true"></i> HTML</button>
+                </div>
+            </div>
+            <div class="layui-col-md6">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;margin-right: 10px;">
+                    <legend>表单设计区域</legend>
+                </fieldset>
+                <div id="formcontent">
+                    
+                </div>
+            </div>
+            <div class="layui-col-md3">
+                <fieldset class="layui-elem-field layui-field-title" style="margin-top: 10px;">
+                    <legend>表单相关属性</legend>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/jquery-ui/jquery-ui.js"></script>
+    <script src="~/layui/layui.js"></script>
+<script>
+    $(function() {
+        $(".draggable").draggable({
+            connectToSortable: "#formcontent",
+            helper: "clone",
+            revert: "invalid"
+        });
+        $("button").disableSelection();
+    });
+
+
+</script>
+</body>
+</html>

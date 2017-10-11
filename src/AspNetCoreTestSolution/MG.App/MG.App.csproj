@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+    <PackageReference Include="UEditorNetCore" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +25,11 @@
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
     <Folder Include="wwwroot\js\" />
+    <Folder Include="wwwroot\ueditor\net\upload\image\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\ueditor\net\net.sln" />
   </ItemGroup>
 
 </Project>

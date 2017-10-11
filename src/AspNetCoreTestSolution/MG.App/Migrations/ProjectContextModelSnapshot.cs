@@ -34,7 +34,10 @@ namespace MG.App.Migrations
                     b.Property<string>("Country")
                         .HasMaxLength(50);
 
-                    b.Property<DateTime>("CreateTime");
+                    b.Property<DateTime>("CreateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("District")
                         .HasMaxLength(50);
@@ -63,9 +66,11 @@ namespace MG.App.Migrations
                     b.Property<string>("LastLoginIP")
                         .HasMaxLength(50);
 
-                    b.Property<DateTime>("LastLoginTime");
+                    b.Property<DateTime>("LastLoginTime")
+                        .HasColumnType("datetime");
 
-                    b.Property<DateTime?>("LastWeixinSignInTime");
+                    b.Property<DateTime?>("LastWeixinSignInTime")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("NickName")
                         .HasMaxLength(50);
@@ -113,7 +118,8 @@ namespace MG.App.Migrations
                     b.Property<string>("ThisLoginIP")
                         .HasMaxLength(50);
 
-                    b.Property<DateTime>("ThisLoginTime");
+                    b.Property<DateTime>("ThisLoginTime")
+                        .HasColumnType("datetime");
 
                     b.Property<int>("Type")
                         .ValueGeneratedOnAdd()
@@ -145,7 +151,10 @@ namespace MG.App.Migrations
                     b.Property<string>("Address")
                         .HasMaxLength(200);
 
-                    b.Property<DateTime>("CreateTime");
+                    b.Property<DateTime>("CreateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("CreateUser")
                         .HasMaxLength(50);
@@ -179,7 +188,8 @@ namespace MG.App.Migrations
                     b.Property<string>("ManagerId")
                         .HasMaxLength(50);
 
-                    b.Property<DateTime?>("ModifyTime");
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("ModifyUser")
                         .HasMaxLength(50);
@@ -215,7 +225,10 @@ namespace MG.App.Migrations
                         .ValueGeneratedOnAdd()
                         .HasDefaultValue(true);
 
-                    b.Property<DateTime>("CreateTime");
+                    b.Property<DateTime>("CreateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("CreateUser")
                         .HasMaxLength(50);
@@ -228,11 +241,14 @@ namespace MG.App.Migrations
                         .HasColumnName("Guid")
                         .HasMaxLength(36);
 
-                    b.Property<bool>("IsDeleted");
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValue(false);
 
                     b.Property<bool>("IsEnableed");
 
-                    b.Property<DateTime?>("ModifyTime");
+                    b.Property<DateTime?>("ModifyTime")
+                        .HasColumnType("datetime");
 
                     b.Property<string>("ModifyUser")
                         .HasMaxLength(50);
@@ -263,7 +279,10 @@ namespace MG.App.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("CreateTime");
+                    b.Property<DateTime>("CreateTime")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<string>("CreateUser")
                         .HasMaxLength(50);
